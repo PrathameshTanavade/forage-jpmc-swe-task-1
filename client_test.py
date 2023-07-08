@@ -23,37 +23,39 @@ class ClientTest(unittest.TestCase):
 
   """ ------------ Add more unit tests ------------ """
   def test_getRatio_def0(self):
-     prices=[
-        {'ABC':120},
-        {'DEF':0} 
-      ]
+     prices={'ABC':120,
+        'DEF':0} 
+    
      
      for n in prices:
-        self.assertEqual(getRatio(prices['ABC'],prices['DEF']), (prices['ABC']/prices['DEF']))
+        self.assertEqual(getRatio(prices['ABC'],prices['DEF']), 0)
 
   def test_getRatio_abc0(self):
-     prices=[
-        {'ABC':0},
-        {'DEF':120}
-     ]
+     prices={
+        'ABC':0,
+        'DEF':120
+        }
+     
      
      for price in prices:
         self.assertEqual(getRatio(prices['ABC'],prices['DEF']), (prices['ABC']/prices['DEF']))
 
   def test_getRatio_both0(self):
-     prices=[
-        {'ABC':0},
-        {'DEF':0}
-     ]
+     prices={
+        'ABC':0,
+        'DEF':0
+        }
+  
      
      for price in prices:
-        self.assertEqual(getRatio(prices['ABC'],prices['DEF']), (prices['ABC']/prices['DEF']))
+        self.assertEqual(getRatio(prices['ABC'],prices['DEF']), 0)
 
   def test_getRatio(self):
-     prices=[
-        {'ABC':120},
-        {'DEF':60}
-     ]
+     prices={
+        'ABC':120,
+        'DEF':60
+        }
+     
      
      for price in prices:
         self.assertEqual(getRatio(prices['ABC'],prices['DEF']), (prices['ABC']/prices['DEF']))
